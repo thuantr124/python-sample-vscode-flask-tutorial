@@ -6,10 +6,8 @@
 trigger:
 - main
 
-
 pool:
   name: Default
-
 
 steps:
 - task: UsePythonVersion@0
@@ -41,7 +39,7 @@ steps:
 jobs:
 - deployment: DeploymentJob
 pool:
-  vmImage: $(vmImageName)
+  name: Default
 environment: $(environmentName)
 strategy:
   runOnce:
