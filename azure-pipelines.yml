@@ -5,6 +5,10 @@
 
 trigger:
 - main
+pool:
+  name: Default
+
+
 stages:
 - stage: Build
   jobs:
@@ -43,8 +47,6 @@ stages:
 - stage: Deploy
   jobs:
   - job: Deploy
-pool:
-  name: Default
 environment: $(environmentName)
 strategy:
   runOnce:
