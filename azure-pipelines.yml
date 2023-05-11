@@ -46,7 +46,7 @@ stages:
 - stage: Deploy
   jobs:
   - job: Deploy
-environment: jugy
+environment: 'jugy'
 strategy:
   runOnce:
     deploy:
