@@ -5,9 +5,10 @@
 
 trigger:
 - main
-
-jobs:
-- job: Build
+stages:
+- stage: Build
+  jobs:
+  - job: Build
 pool:
   name: Default
 steps:
@@ -36,9 +37,12 @@ steps:
 - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
   displayName: 'Upload package'
   artifact: drop
-  
-jobs:
-- deployment: DeploymentJob
+
+
+stages:
+- stage: Deploy
+  jobs:
+  - job: Deploy
 pool:
   name: Default
 environment: $(environmentName)
