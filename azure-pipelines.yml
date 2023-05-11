@@ -16,9 +16,8 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-          echo  '$(System.DefaultWorkingDirectory)'
+          echo  ' $(projectRoot)'
           dir
-          dir subfoldername
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.9'
