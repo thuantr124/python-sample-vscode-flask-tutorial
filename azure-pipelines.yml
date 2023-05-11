@@ -13,8 +13,7 @@ stages:
 - stage: Build
   jobs:
   - job: Build
-pool:
-  name: Default
+
 steps:
 - task: UsePythonVersion@0
   inputs:
